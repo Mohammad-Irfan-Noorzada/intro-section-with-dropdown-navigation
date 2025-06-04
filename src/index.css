@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    overflow-x: hidden;
+    background-color: hsl(0, 0%, 98%);
+}
+
+@layer utilities {
+  @keyframes slideFadeDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10%) scaleY(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+  }
+
+  .animate-fade {
+    @apply transition-all duration-300 ease-out;
+    animation: slideFadeDown 0.3s ease-out forwards;
+  }
+}
